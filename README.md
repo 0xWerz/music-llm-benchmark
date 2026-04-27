@@ -15,14 +15,14 @@ Results are saved in `benchmark-runs/<timestamp>/`.
 
 ## Latest Result
 
-![Overall result](docs/latest/score-overview.svg)
+![Overall result](docs/latest/score-overview.png)
 
 Breakdowns:
 
-![Kimi dream pop breakdown](docs/latest/kimi-k2.6--dream-pop-arrangement--breakdown.svg)
+![Kimi dream pop breakdown](docs/latest/kimi-k2.6--dream-pop-arrangement--breakdown.png)
 
-![Kimi revision repair breakdown](docs/latest/kimi-k2.6--revision-repair--breakdown.svg)
+![Kimi revision repair breakdown](docs/latest/kimi-k2.6--revision-repair--breakdown.png)
 
-![Qwen dream pop breakdown](docs/latest/qwen3.5-plus--dream-pop-arrangement--breakdown.svg)
+![Qwen dream pop breakdown](docs/latest/qwen3.5-plus--dream-pop-arrangement--breakdown.png)
 
-![Qwen revision repair breakdown](docs/latest/qwen3.5-plus--revision-repair--breakdown.svg)
+![Qwen revision repair breakdown](docs/latest/qwen3.5-plus--revision-repair--breakdown.png)

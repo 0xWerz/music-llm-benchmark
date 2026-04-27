@@ -116,7 +116,7 @@ function renderConsoleSummary(results: BenchResult[], outDir: string): string {
 
 function renderSummary(results: BenchResult[], outDir: string, charts: ChartPaths): string {
   const lines = ["# Music LLM Benchmark Results", ""];
-  lines.push("![Score overview](charts/score-overview.svg)");
+  lines.push("![Score overview](charts/score-overview.png)");
   lines.push("");
   for (const result of results) {
     const breakdown = charts.breakdowns.get(resultKey(result));

@@ -13,7 +13,7 @@ const outDir = resolve(process.cwd(), runDirArg);
 const results = JSON.parse(await readFile(join(outDir, "results.json"), "utf8")) as BenchResult[];
 const charts = await writeCharts(outDir, results);
 
-const lines = ["# Music LLM Benchmark Results", "", "![Score overview](charts/score-overview.svg)", ""];
+const lines = ["# Music LLM Benchmark Results", "", "![Score overview](charts/score-overview.png)", ""];
 for (const result of results) {
   const breakdown = charts.breakdowns.get(resultKey(result));
   lines.push(`## ${result.model} / ${result.taskId}`, "", `Score: ${result.score}/70`, "");
