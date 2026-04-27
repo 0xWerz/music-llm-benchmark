@@ -7,7 +7,7 @@ import { relativeChartPath, resultKey, writeCharts, type ChartPaths } from "./ch
 import type { BenchResult, MusicIR } from "./types";
 
 const DEFAULT_BASE_URL = "https://opencode.ai/zen/go/v1/chat/completions";
-const DEFAULT_MODELS = ["kimi-k2.6"];
+const DEFAULT_MODELS = ["kimi-k2.6", "qwen3.5-plus"];
 
 async function main() {
   const apiKey = Bun.env.BENCH_API_KEY;
@@ -37,7 +37,7 @@ async function main() {
           apiKey,
           model,
           temperature: 0.2,
-          maxTokens: 8000,
+          maxTokens: 4000,
           messages: [
             {
               role: "system",

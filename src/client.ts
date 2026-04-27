@@ -21,7 +21,7 @@ export async function callChatCompletion(args: {
       model: args.model,
       messages: args.messages,
       temperature: args.temperature ?? 0.2,
-      max_tokens: args.maxTokens ?? 8000,
+      max_tokens: args.maxTokens ?? 4000,
       thinking: { type: "disabled" },
       reasoning: { enabled: false },
       chat_template_kwargs: { thinking: false }

@@ -49,27 +49,43 @@ function renderOverview(results: BenchResult[]): string {
   const margin = { top: 42, right: 30, bottom: 84, left: 58 };
   const plotW = width - margin.left - margin.right;
   const plotH = height - margin.top - margin.bottom;
+  const modelScores = summarizeModels(results);
   const barGap = 18;
-  const barW = Math.max(44, (plotW - barGap * (results.length - 1)) / Math.max(1, results.length));
+  const barW = Math.max(70, (plotW - barGap * (modelScores.length - 1)) / Math.max(1, modelScores.length));
 
-  const bars = results.map((result, i) => {
+  const bars = modelScores.map((result, i) => {
     const x = margin.left + i * (barW + barGap);
-    const h = (result.score / 70) * plotH;
+    const h = (result.percent / 100) * plotH;
     const y = margin.top + plotH - h;
-    const color = result.score >= 60 ? "#2f8f6b" : result.score >= 42 ? "#d89428" : "#b84a42";
+    const color = result.percent >= 86 ? "#2f8f6b" : result.percent >= 60 ? "#d89428" : "#b84a42";
     return `
       <rect x="${x}" y="${y}" width="${barW}" height="${h}" rx="10" fill="${color}"/>
-      <text x="${x + barW / 2}" y="${y - 10}" text-anchor="middle" class="score">${result.score}/70</text>
-      <text x="${x + barW / 2}" y="${height - 50}" text-anchor="middle" class="label">${escapeXml(result.model)}</text>
-      <text x="${x + barW / 2}" y="${height - 31}" text-anchor="middle" class="sub">${escapeXml(result.taskId)}</text>
+      <text x="${x + barW / 2}" y="${y - 10}" text-anchor="middle" class="score">${result.percent}%</text>
+      <text x="${x + barW / 2}" y="${height - 44}" text-anchor="middle" class="label">${escapeXml(result.model)}</text>
+      <text x="${x + barW / 2}" y="${height - 25}" text-anchor="middle" class="sub">${result.average}/70 avg</text>
     `;
   }).join("\n");
 
   return svg(width, height, `
-    <text x="32" y="30" class="title">Music Benchmark Score Overview</text>
-    ${axis(margin.left, margin.top, plotW, plotH, 70)}
+    <text x="32" y="30" class="title">Overall Music Benchmark Result</text>
+    ${axis(margin.left, margin.top, plotW, plotH, 100)}
     ${bars}
   `);
+}
+
+function summarizeModels(results: BenchResult[]): Array<{ model: string; average: number; percent: number }> {
+  const byModel = new Map<string, BenchResult[]>();
+  for (const result of results) {
+    byModel.set(result.model, [...(byModel.get(result.model) ?? []), result]);
+  }
+  return [...byModel.entries()].map(([model, modelResults]) => {
+    const average = modelResults.reduce((sum, result) => sum + result.score, 0) / modelResults.length;
+    return {
+      model,
+      average: Math.round(average * 10) / 10,
+      percent: Math.round((average / 70) * 100)
+    };
+  }).sort((a, b) => b.percent - a.percent);
 }
 
 function renderBreakdown(result: BenchResult): string {
@@ -100,7 +116,7 @@ function renderBreakdown(result: BenchResult): string {
 }
 
 function axis(x: number, y: number, w: number, h: number, max: number): string {
-  const ticks = [0, 14, 28, 42, 56, 70];
+  const ticks = max === 100 ? [0, 20, 40, 60, 80, 100] : [0, 14, 28, 42, 56, 70];
   return `
     <line x1="${x}" y1="${y + h}" x2="${x + w}" y2="${y + h}" stroke="#837764" stroke-width="1"/>
     ${ticks.map((tick) => {

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="390" viewBox="0 0 980 390" role="img">
+  <style>
+    svg { background: #f7f0e5; }
+    .title { font: 700 22px Georgia, serif; fill: #2e2823; }
+    .subtitle { font: 500 14px Georgia, serif; fill: #6d6254; }
+    .label { font: 600 13px Georgia, serif; fill: #3e362d; }
+    .sub { font: 500 12px Georgia, serif; fill: #6d6254; }
+    .score { font: 700 13px Georgia, serif; fill: #2e2823; }
+    .tick { font: 500 11px Georgia, serif; fill: #7b6f60; }
+  </style>
+  
+    <text x="32" y="30" class="title">kimi-k2.6 / dream-pop-arrangement</text>
+    <text x="32" y="52" class="subtitle">Total: 65.9/70</text>
+    
+      <text x="134" y="90" text-anchor="end" class="label">Valid Json</text>
+      <rect x="150" y="68" width="782" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="150" y="68" width="782" height="24" rx="12" fill="#2f8f6b"/>
+      <text x="946" y="86" class="score">10/10</text>
+    
+
+      <text x="134" y="126" text-anchor="end" class="label">Schema</text>
+      <rect x="150" y="104" width="782" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="150" y="104" width="782" height="24" rx="12" fill="#2f8f6b"/>
+      <text x="946" y="122" class="score">10/10</text>
+    
+
+      <text x="134" y="162" text-anchor="end" class="label">Prompt Fit</text>
+      <rect x="150" y="140" width="782" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="150" y="140" width="625.6" height="24" rx="12" fill="#d89428"/>
+      <text x="946" y="158" class="score">8/10</text>
+    
+
+      <text x="134" y="198" text-anchor="end" class="label">Theory</text>
+      <rect x="150" y="176" width="782" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="150" y="176" width="772.225" height="24" rx="12" fill="#2f8f6b"/>
+      <text x="946" y="194" class="score">9.875/10</text>
+    
+
+      <text x="134" y="234" text-anchor="end" class="label">Arrangement</text>
+      <rect x="150" y="212" width="782" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="150" y="212" width="625.6" height="24" rx="12" fill="#d89428"/>
+      <text x="946" y="230" class="score">8/10</text>
+    
+
+      <text x="134" y="270" text-anchor="end" class="label">Rhythm</text>
+      <rect x="150" y="248" width="782" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="150" y="248" width="782" height="24" rx="12" fill="#2f8f6b"/>
+      <text x="946" y="266" class="score">10/10</text>
+    
+
+      <text x="134" y="306" text-anchor="end" class="label">Editability</text>
+      <rect x="150" y="284" width="782" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="150" y="284" width="782" height="24" rx="12" fill="#2f8f6b"/>
+      <text x="946" y="302" class="score">10/10</text>
+    
+  
+</svg>
