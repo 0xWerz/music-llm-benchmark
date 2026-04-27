@@ -17,10 +17,6 @@ Results are saved in `benchmark-runs/<timestamp>/`.
 
 ![Overall result](docs/latest/score-overview.svg)
 
-Kimi K2.6 averaged about `93%`.
-
-Qwen3.5 Plus averaged about `48%` in this run because one task hit an Alibaba provider quota error. Its successful task scored `66.5/70`.
-
 Breakdowns:
 
 ![Kimi dream pop breakdown](docs/latest/kimi-k2.6--dream-pop-arrangement--breakdown.svg)

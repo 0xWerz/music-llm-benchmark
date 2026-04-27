@@ -1,54 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="980" height="280" viewBox="0 0 980 280" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="760" viewBox="0 0 620 760" role="img">
   <style>
     svg { background: #f7f0e5; }
-    .title { font: 700 22px Georgia, serif; fill: #2e2823; }
-    .subtitle { font: 500 14px Georgia, serif; fill: #6d6254; }
-    .label { font: 600 13px Georgia, serif; fill: #3e362d; }
-    .sub { font: 500 12px Georgia, serif; fill: #6d6254; }
-    .score { font: 700 13px Georgia, serif; fill: #2e2823; }
-    .tick { font: 500 11px Georgia, serif; fill: #7b6f60; }
+    .title { font: 700 30px Georgia, serif; fill: #2e2823; }
+    .subtitle { font: 500 15px Georgia, serif; fill: #6d6254; }
+    .model { font: 700 22px Georgia, serif; fill: #2e2823; }
+    .big { font: 700 38px Georgia, serif; fill: #2e2823; }
+    .label { font: 600 15px Georgia, serif; fill: #3e362d; }
+    .sub { font: 500 13px Georgia, serif; fill: #6d6254; }
+    .score { font: 700 14px Georgia, serif; fill: #2e2823; }
   </style>
   
-    <text x="32" y="30" class="title">Overall Music Benchmark Result</text>
+    <text x="54" y="42" class="title">Music Benchmark</text>
+    <text x="54" y="68" class="subtitle">Overall result by model</text>
     
-    <line x1="58" y1="196" x2="950" y2="196" stroke="#837764" stroke-width="1"/>
-    
-        <line x1="53" y1="196" x2="950" y2="196" stroke="#d8cdbc" stroke-width="1"/>
-        <text x="46" y="200" text-anchor="end" class="tick">0</text>
-      
-
-        <line x1="53" y1="165.2" x2="950" y2="165.2" stroke="#d8cdbc" stroke-width="1"/>
-        <text x="46" y="169.2" text-anchor="end" class="tick">20</text>
-      
-
-        <line x1="53" y1="134.4" x2="950" y2="134.4" stroke="#d8cdbc" stroke-width="1"/>
-        <text x="46" y="138.4" text-anchor="end" class="tick">40</text>
-      
-
-        <line x1="53" y1="103.60000000000001" x2="950" y2="103.60000000000001" stroke="#d8cdbc" stroke-width="1"/>
-        <text x="46" y="107.60000000000001" text-anchor="end" class="tick">60</text>
-      
-
-        <line x1="53" y1="72.8" x2="950" y2="72.8" stroke="#d8cdbc" stroke-width="1"/>
-        <text x="46" y="76.8" text-anchor="end" class="tick">80</text>
-      
-
-        <line x1="53" y1="42" x2="950" y2="42" stroke="#d8cdbc" stroke-width="1"/>
-        <text x="46" y="46" text-anchor="end" class="tick">100</text>
-      
-  
-    
-      <rect x="58" y="52.78" width="437" height="143.22" rx="10" fill="#2f8f6b"/>
-      <text x="276.5" y="42.78" text-anchor="middle" class="score">93%</text>
-      <text x="276.5" y="236" text-anchor="middle" class="label">kimi-k2.6</text>
-      <text x="276.5" y="255" text-anchor="middle" class="sub">64.9/70 avg</text>
+      <text x="54" y="92" class="model">kimi-k2.6</text>
+      <text x="566" y="92" text-anchor="end" class="big">93%</text>
+      <rect x="54" y="126" width="512" height="64" rx="20" fill="#e8dfcf"/>
+      <rect x="54" y="126" width="476.16" height="64" rx="20" fill="#2f8f6b"/>
+      <text x="54" y="218" class="sub">64.9/70 average across tasks</text>
     
 
-      <rect x="513" y="122.08" width="437" height="73.92" rx="10" fill="#b84a42"/>
-      <text x="731.5" y="112.08" text-anchor="middle" class="score">48%</text>
-      <text x="731.5" y="236" text-anchor="middle" class="label">qwen3.5-plus</text>
-      <text x="731.5" y="255" text-anchor="middle" class="sub">33.3/70 avg</text>
+      <text x="54" y="272" class="model">qwen3.5-plus</text>
+      <text x="566" y="272" text-anchor="end" class="big">48%</text>
+      <rect x="54" y="306" width="512" height="64" rx="20" fill="#e8dfcf"/>
+      <rect x="54" y="306" width="245.76" height="64" rx="20" fill="#b84a42"/>
+      <text x="54" y="398" class="sub">33.3/70 average across tasks</text>
     
   
 </svg>

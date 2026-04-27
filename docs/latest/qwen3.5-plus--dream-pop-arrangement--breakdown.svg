@@ -1,58 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="980" height="390" viewBox="0 0 980 390" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="610" viewBox="0 0 620 610" role="img">
   <style>
     svg { background: #f7f0e5; }
-    .title { font: 700 22px Georgia, serif; fill: #2e2823; }
-    .subtitle { font: 500 14px Georgia, serif; fill: #6d6254; }
-    .label { font: 600 13px Georgia, serif; fill: #3e362d; }
-    .sub { font: 500 12px Georgia, serif; fill: #6d6254; }
-    .score { font: 700 13px Georgia, serif; fill: #2e2823; }
-    .tick { font: 500 11px Georgia, serif; fill: #7b6f60; }
+    .title { font: 700 30px Georgia, serif; fill: #2e2823; }
+    .subtitle { font: 500 15px Georgia, serif; fill: #6d6254; }
+    .model { font: 700 22px Georgia, serif; fill: #2e2823; }
+    .big { font: 700 38px Georgia, serif; fill: #2e2823; }
+    .label { font: 600 15px Georgia, serif; fill: #3e362d; }
+    .sub { font: 500 13px Georgia, serif; fill: #6d6254; }
+    .score { font: 700 14px Georgia, serif; fill: #2e2823; }
   </style>
   
-    <text x="32" y="30" class="title">qwen3.5-plus / dream-pop-arrangement</text>
-    <text x="32" y="52" class="subtitle">Total: 0/70</text>
+    <text x="54" y="38" class="title">qwen3.5-plus</text>
+    <text x="54" y="64" class="subtitle">dream-pop-arrangement · 0/70</text>
     
-      <text x="134" y="90" text-anchor="end" class="label">Valid Json</text>
-      <rect x="150" y="68" width="782" height="24" rx="12" fill="#e8dfcf"/>
-      <rect x="150" y="68" width="0" height="24" rx="12" fill="#b84a42"/>
-      <text x="946" y="86" class="score">0/10</text>
-    
-
-      <text x="134" y="126" text-anchor="end" class="label">Schema</text>
-      <rect x="150" y="104" width="782" height="24" rx="12" fill="#e8dfcf"/>
-      <rect x="150" y="104" width="0" height="24" rx="12" fill="#b84a42"/>
-      <text x="946" y="122" class="score">0/10</text>
+      <text x="54" y="92" class="label">Valid Json</text>
+      <text x="566" y="92" text-anchor="end" class="score">0/10</text>
+      <rect x="54" y="104" width="512" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="54" y="104" width="0" height="24" rx="12" fill="#b84a42"/>
     
 
-      <text x="134" y="162" text-anchor="end" class="label">Prompt Fit</text>
-      <rect x="150" y="140" width="782" height="24" rx="12" fill="#e8dfcf"/>
-      <rect x="150" y="140" width="0" height="24" rx="12" fill="#b84a42"/>
-      <text x="946" y="158" class="score">0/10</text>
+      <text x="54" y="154" class="label">Schema</text>
+      <text x="566" y="154" text-anchor="end" class="score">0/10</text>
+      <rect x="54" y="166" width="512" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="54" y="166" width="0" height="24" rx="12" fill="#b84a42"/>
     
 
-      <text x="134" y="198" text-anchor="end" class="label">Theory</text>
-      <rect x="150" y="176" width="782" height="24" rx="12" fill="#e8dfcf"/>
-      <rect x="150" y="176" width="0" height="24" rx="12" fill="#b84a42"/>
-      <text x="946" y="194" class="score">0/10</text>
+      <text x="54" y="216" class="label">Prompt Fit</text>
+      <text x="566" y="216" text-anchor="end" class="score">0/10</text>
+      <rect x="54" y="228" width="512" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="54" y="228" width="0" height="24" rx="12" fill="#b84a42"/>
     
 
-      <text x="134" y="234" text-anchor="end" class="label">Arrangement</text>
-      <rect x="150" y="212" width="782" height="24" rx="12" fill="#e8dfcf"/>
-      <rect x="150" y="212" width="0" height="24" rx="12" fill="#b84a42"/>
-      <text x="946" y="230" class="score">0/10</text>
+      <text x="54" y="278" class="label">Theory</text>
+      <text x="566" y="278" text-anchor="end" class="score">0/10</text>
+      <rect x="54" y="290" width="512" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="54" y="290" width="0" height="24" rx="12" fill="#b84a42"/>
     
 
-      <text x="134" y="270" text-anchor="end" class="label">Rhythm</text>
-      <rect x="150" y="248" width="782" height="24" rx="12" fill="#e8dfcf"/>
-      <rect x="150" y="248" width="0" height="24" rx="12" fill="#b84a42"/>
-      <text x="946" y="266" class="score">0/10</text>
+      <text x="54" y="340" class="label">Arrangement</text>
+      <text x="566" y="340" text-anchor="end" class="score">0/10</text>
+      <rect x="54" y="352" width="512" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="54" y="352" width="0" height="24" rx="12" fill="#b84a42"/>
     
 
-      <text x="134" y="306" text-anchor="end" class="label">Editability</text>
-      <rect x="150" y="284" width="782" height="24" rx="12" fill="#e8dfcf"/>
-      <rect x="150" y="284" width="0" height="24" rx="12" fill="#b84a42"/>
-      <text x="946" y="302" class="score">0/10</text>
+      <text x="54" y="402" class="label">Rhythm</text>
+      <text x="566" y="402" text-anchor="end" class="score">0/10</text>
+      <rect x="54" y="414" width="512" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="54" y="414" width="0" height="24" rx="12" fill="#b84a42"/>
+    
+
+      <text x="54" y="464" class="label">Editability</text>
+      <text x="566" y="464" text-anchor="end" class="score">0/10</text>
+      <rect x="54" y="476" width="512" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="54" y="476" width="0" height="24" rx="12" fill="#b84a42"/>
     
   
 </svg>

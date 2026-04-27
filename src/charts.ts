@@ -44,31 +44,30 @@ export function relativeChartPath(outDir: string, path: string): string {
 }
 
 function renderOverview(results: BenchResult[]): string {
-  const width = 980;
-  const height = 280;
-  const margin = { top: 42, right: 30, bottom: 84, left: 58 };
+  const width = 620;
+  const height = 760;
+  const margin = { top: 92, right: 54, bottom: 46, left: 54 };
   const plotW = width - margin.left - margin.right;
-  const plotH = height - margin.top - margin.bottom;
   const modelScores = summarizeModels(results);
-  const barGap = 18;
-  const barW = Math.max(70, (plotW - barGap * (modelScores.length - 1)) / Math.max(1, modelScores.length));
+  const rowH = 180;
 
   const bars = modelScores.map((result, i) => {
-    const x = margin.left + i * (barW + barGap);
-    const h = (result.percent / 100) * plotH;
-    const y = margin.top + plotH - h;
+    const y = margin.top + i * rowH;
+    const h = 64;
+    const w = (result.percent / 100) * plotW;
     const color = result.percent >= 86 ? "#2f8f6b" : result.percent >= 60 ? "#d89428" : "#b84a42";
     return `
-      <rect x="${x}" y="${y}" width="${barW}" height="${h}" rx="10" fill="${color}"/>
-      <text x="${x + barW / 2}" y="${y - 10}" text-anchor="middle" class="score">${result.percent}%</text>
-      <text x="${x + barW / 2}" y="${height - 44}" text-anchor="middle" class="label">${escapeXml(result.model)}</text>
-      <text x="${x + barW / 2}" y="${height - 25}" text-anchor="middle" class="sub">${result.average}/70 avg</text>
+      <text x="${margin.left}" y="${y}" class="model">${escapeXml(result.model)}</text>
+      <text x="${width - margin.right}" y="${y}" text-anchor="end" class="big">${result.percent}%</text>
+      <rect x="${margin.left}" y="${y + 34}" width="${plotW}" height="${h}" rx="20" fill="#e8dfcf"/>
+      <rect x="${margin.left}" y="${y + 34}" width="${w}" height="${h}" rx="20" fill="${color}"/>
+      <text x="${margin.left}" y="${y + 126}" class="sub">${result.average}/70 average across tasks</text>
     `;
   }).join("\n");
 
   return svg(width, height, `
-    <text x="32" y="30" class="title">Overall Music Benchmark Result</text>
-    ${axis(margin.left, margin.top, plotW, plotH, 100)}
+    <text x="${margin.left}" y="42" class="title">Music Benchmark</text>
+    <text x="${margin.left}" y="68" class="subtitle">Overall result by model</text>
     ${bars}
   `);
 }
@@ -89,10 +88,10 @@ function summarizeModels(results: BenchResult[]): Array<{ model: string; average
 }
 
 function renderBreakdown(result: BenchResult): string {
-  const width = 980;
-  const height = 390;
-  const margin = { top: 68, right: 48, bottom: 32, left: 150 };
-  const rowH = 36;
+  const width = 620;
+  const height = 610;
+  const margin = { top: 92, right: 54, bottom: 40, left: 54 };
+  const rowH = 62;
   const barW = width - margin.left - margin.right;
 
   const rows = CATEGORIES.map((category, i) => {
@@ -101,32 +100,18 @@ function renderBreakdown(result: BenchResult): string {
     const w = (value / 10) * barW;
     const color = value >= 9 ? "#2f8f6b" : value >= 6 ? "#d89428" : "#b84a42";
     return `
-      <text x="${margin.left - 16}" y="${y + 22}" text-anchor="end" class="label">${pretty(category)}</text>
-      <rect x="${margin.left}" y="${y}" width="${barW}" height="24" rx="12" fill="#e8dfcf"/>
-      <rect x="${margin.left}" y="${y}" width="${w}" height="24" rx="12" fill="${color}"/>
-      <text x="${margin.left + barW + 14}" y="${y + 18}" class="score">${value}/10</text>
+      <text x="${margin.left}" y="${y}" class="label">${pretty(category)}</text>
+      <text x="${width - margin.right}" y="${y}" text-anchor="end" class="score">${round(value)}/10</text>
+      <rect x="${margin.left}" y="${y + 12}" width="${barW}" height="24" rx="12" fill="#e8dfcf"/>
+      <rect x="${margin.left}" y="${y + 12}" width="${w}" height="24" rx="12" fill="${color}"/>
     `;
   }).join("\n");
 
   return svg(width, height, `
-    <text x="32" y="30" class="title">${escapeXml(result.model)} / ${escapeXml(result.taskId)}</text>
-    <text x="32" y="52" class="subtitle">Total: ${result.score}/70</text>
+    <text x="${margin.left}" y="38" class="title">${escapeXml(result.model)}</text>
+    <text x="${margin.left}" y="64" class="subtitle">${escapeXml(result.taskId)} · ${round(result.score)}/70</text>
     ${rows}
   `);
-}
-
-function axis(x: number, y: number, w: number, h: number, max: number): string {
-  const ticks = max === 100 ? [0, 20, 40, 60, 80, 100] : [0, 14, 28, 42, 56, 70];
-  return `
-    <line x1="${x}" y1="${y + h}" x2="${x + w}" y2="${y + h}" stroke="#837764" stroke-width="1"/>
-    ${ticks.map((tick) => {
-      const ty = y + h - (tick / max) * h;
-      return `
-        <line x1="${x - 5}" y1="${ty}" x2="${x + w}" y2="${ty}" stroke="#d8cdbc" stroke-width="1"/>
-        <text x="${x - 12}" y="${ty + 4}" text-anchor="end" class="tick">${tick}</text>
-      `;
-    }).join("\n")}
-  `;
 }
 
 function svg(width: number, height: number, body: string): string {
@@ -134,12 +119,13 @@ function svg(width: number, height: number, body: string): string {
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img">
   <style>
     svg { background: #f7f0e5; }
-    .title { font: 700 22px Georgia, serif; fill: #2e2823; }
-    .subtitle { font: 500 14px Georgia, serif; fill: #6d6254; }
-    .label { font: 600 13px Georgia, serif; fill: #3e362d; }
-    .sub { font: 500 12px Georgia, serif; fill: #6d6254; }
-    .score { font: 700 13px Georgia, serif; fill: #2e2823; }
-    .tick { font: 500 11px Georgia, serif; fill: #7b6f60; }
+    .title { font: 700 30px Georgia, serif; fill: #2e2823; }
+    .subtitle { font: 500 15px Georgia, serif; fill: #6d6254; }
+    .model { font: 700 22px Georgia, serif; fill: #2e2823; }
+    .big { font: 700 38px Georgia, serif; fill: #2e2823; }
+    .label { font: 600 15px Georgia, serif; fill: #3e362d; }
+    .sub { font: 500 13px Georgia, serif; fill: #6d6254; }
+    .score { font: 700 14px Georgia, serif; fill: #2e2823; }
   </style>
   ${body}
 </svg>
@@ -148,6 +134,10 @@ function svg(width: number, height: number, body: string): string {
 
 function pretty(key: string): string {
   return key.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
+}
+
+function round(value: number): number {
+  return Math.round(value * 10) / 10;
 }
 
 function safeName(name: string): string {
