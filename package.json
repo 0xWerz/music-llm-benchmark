@@ -1,0 +1,15 @@
+{
+  "name": "music-llm-benchmark",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "bench": "bun run src/index.ts",
+    "bench:kimi": "BENCH_MODELS=kimi-k2.6 bun run src/index.ts",
+    "charts": "bun run src/graph-run.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "latest"
+  }
+}

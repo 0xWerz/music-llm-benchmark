@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="280" viewBox="0 0 980 280" role="img">
+  <style>
+    svg { background: #f7f0e5; }
+    .title { font: 700 22px Georgia, serif; fill: #2e2823; }
+    .subtitle { font: 500 14px Georgia, serif; fill: #6d6254; }
+    .label { font: 600 13px Georgia, serif; fill: #3e362d; }
+    .sub { font: 500 12px Georgia, serif; fill: #6d6254; }
+    .score { font: 700 13px Georgia, serif; fill: #2e2823; }
+    .tick { font: 500 11px Georgia, serif; fill: #7b6f60; }
+  </style>
+  
+    <text x="32" y="30" class="title">Music Benchmark Score Overview</text>
+    
+    <line x1="58" y1="196" x2="950" y2="196" stroke="#837764" stroke-width="1"/>
+    
+        <line x1="53" y1="196" x2="950" y2="196" stroke="#d8cdbc" stroke-width="1"/>
+        <text x="46" y="200" text-anchor="end" class="tick">0</text>
+      
+
+        <line x1="53" y1="165.2" x2="950" y2="165.2" stroke="#d8cdbc" stroke-width="1"/>
+        <text x="46" y="169.2" text-anchor="end" class="tick">14</text>
+      
+
+        <line x1="53" y1="134.4" x2="950" y2="134.4" stroke="#d8cdbc" stroke-width="1"/>
+        <text x="46" y="138.4" text-anchor="end" class="tick">28</text>
+      
+
+        <line x1="53" y1="103.60000000000001" x2="950" y2="103.60000000000001" stroke="#d8cdbc" stroke-width="1"/>
+        <text x="46" y="107.60000000000001" text-anchor="end" class="tick">42</text>
+      
+
+        <line x1="53" y1="72.8" x2="950" y2="72.8" stroke="#d8cdbc" stroke-width="1"/>
+        <text x="46" y="76.8" text-anchor="end" class="tick">56</text>
+      
+
+        <line x1="53" y1="42" x2="950" y2="42" stroke="#d8cdbc" stroke-width="1"/>
+        <text x="46" y="46" text-anchor="end" class="tick">70</text>
+      
+  
+    
+      <rect x="58" y="53" width="437" height="143" rx="10" fill="#2f8f6b"/>
+      <text x="276.5" y="43" text-anchor="middle" class="score">65/70</text>
+      <text x="276.5" y="230" text-anchor="middle" class="label">kimi-k2.6</text>
+      <text x="276.5" y="249" text-anchor="middle" class="sub">dream-pop-arrangement</text>
+    
+
+      <rect x="513" y="53" width="437" height="143" rx="10" fill="#2f8f6b"/>
+      <text x="731.5" y="43" text-anchor="middle" class="score">65/70</text>
+      <text x="731.5" y="230" text-anchor="middle" class="label">kimi-k2.6</text>
+      <text x="731.5" y="249" text-anchor="middle" class="sub">revision-repair</text>
+    
+  
+</svg>
